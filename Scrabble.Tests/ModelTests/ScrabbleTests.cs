@@ -4,13 +4,31 @@ using Scrabble;
 namespace Scrabble.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class WordTests
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void GetScore_ReturnsScore_1()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      //Arrange
+      string inputString = "a";
+      Word newWord = new Word(inputString);
+      int expectedResult = 1;
+      //Act
+      int result = newWord.GetScore();
+      //Assert
+      Assert.AreEqual(expectedResult, result);
+    }
+    [TestMethod]
+    public void GetScore_ReturnsScore_3()
+    {
+      //Arrange
+      string inputString = "aaa";
+      Word newWord = new Word(inputString);
+      int expectedResult = 3;
+      //Act
+      int result = newWord.GetScore();
+      //Assert
+      Assert.AreEqual(expectedResult, result);
     }
   }
 }
